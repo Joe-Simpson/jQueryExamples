@@ -1,0 +1,41 @@
+.code-snippet {
+	background-color: #354551;
+    font-family: Monaco,Menlo,Ubuntu Mono,Droid Sans Mono,Consolas,monospace;
+    padding: 5px 10px 5px 10px;
+}
+
+dd p {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.blockquote {
+	font-size: 0.9rem;
+}
+
+.click-example-image, 
+.show-hide-toggle-example-image,
+.fadein-fadeout-fadetoggle-example-image,
+.slideup-slidedown-slidetoggle-example-image,
+.addclass-removeclass-toggleclass-example-image {
+	height: 10%;
+	width: 10%;
+}
+
+.mouseEnterLeaveExample {
+	color:'#535353',
+	background-color:'#303030'
+}
+
+.addclass-removeclass-toggleclass-example {
+	height:20%;
+	width: 20%;
+}
+
+.currenttarget-example-target {
+	text-align: center;
+}
+
+.active {
+	background-color: green;
+}

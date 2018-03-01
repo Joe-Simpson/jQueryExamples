@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  	<title>jQueryExamples</title>
+	    <!-- Required meta tags -->
+	    <meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	    <!-- Bootstrap CSS -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	    <link rel="stylesheet" type="text/css" href="css/main.css">
+	</head>
+  <body>
+	<body>
+		<div class="container">
+			<div class="title text-center">
+				<h1>jQuery</h1>
+			</div>
+			
+			<div class="container-fluid">
+				<p>
+					jQuery is a JavaScript library, that makes it relatively easy to implement dynamic functionality into HTML elements. The following summary is stollen striaght from codecademy.com:
+				</p>
+				<blockquote class="blockquote text-center">
+					<p class="mb-0">
+						"Let's use Legos as an analogy for understanding how jQuery works. With an infinite number of Legos, you could build an entire city — of course, this would take a long time. What if you were given pre-made Lego buildings, Lego roads, Lego parks, etc? You could build a city much faster.
+
+						The JavaScript language represents an infinite supply of Lego blocks — the possibilities are endless but time-consuming. The pre-made Lego structures are like jQuery methods. You can use these methods to add dynamic behavior, such as <code>.hide()</code>, <code>.show()</code>, <code>.fadeIn()</code>, <code>.fadeOut()</code> etc., to HTML elements."
+					</p>
+				</blockquote>
+			</div>
+
+			<div class="container">
+				<dl class="row">
+					<dt class="col-sm-4">
+						<code>$()</code>
+					</dt>
+					<dd class="col-sm-8">
+						<p>
+							The <code>$</code> is an alias for the jQuery function. The function <code>$()</code> takes a parameter that targets an element and creates a jQuery object. Typically, we pass a string into <code>$()</code> to target elements by id, class, or tag.
+						</p>
+					</dd>
+					<dt class="col-sm-4">
+						
+					</dt>
+					<dd class="col-sm-8">
+						
+					</dd>
+					<dt class="col-sm-4">
+						<code>.ready()</code>
+					</dt>
+					<dd class="col-sm-8">
+						<p>
+							A web page must first be rendered before any dynamic behaviour can be implemented. To do so we utilise the <code>.ready()</code> method.
+						</p>
+						<code class="code-snippet">$(document).ready(() => { callbackFunction(); });</code>
+						<p>
+							In the above example, the <code>.ready()</code> method is called to trigger the callbackFunction(); once the browser has finished rendering the HMTL document. The <code>$(document)</code> uses the special keyword <code>document</code> to target the HMTL document and create a jQuery object
+						</p>
+					</dd>
+					<dt class="col-sm-4">
+						<p>Target by Class</p>
+					</dt>
+					<dd class="col-sm-8">
+						<p>
+							To target a HMTL element by class we pass the class string to <code>$()</code> prepended with a <code>.</code>, wrapped in apostrophes.
+						</p>
+						<code class="code-snippet">$('.element_class')</code>
+					</dd>
+					<dt class="col-sm-4">
+						<p>Target by Id</p>
+					</dt>
+					<dd class="col-sm-8">
+						<p>
+							To target a HMTL element by class we pass the class string to <code>$()</code> prepended with a <code>#</code>, wrapped in apostrophes.
+						</p>
+						<code class="code-snippet">$('#element_id')</code>
+					</dd>
+					<dt class="col-sm-4">
+						<p>Creating variables from jQuery objects</p>
+					</dt>
+					<dd class="col-sm-8">
+						<p>
+							It is often useful to store jQuery objects as state variables.
+						</p>
+						<code class="code-snippet">const $itemClass = $('.item-class');</code>
+						<p>
+							Note that the created variable name has a preceeding <code>$</code>. It is best convention to name all jQuery object variables as such to remind yourself and others that they are jQuery object variables.
+						</p>
+					</dd>
+					<dt class="col-sm-4">
+						Generic layout of an Event Listener and a Callback Function
+					</dt>
+					<dd class="col-sm-8">
+						<code class="code-snippet">
+							$('.element_class').on('event_listener', () => { $('.element_class').callbackFunction(); });
+						</code>
+					</dd>
+					<dt class="col-sm-4">
+						Event Listener - <code>Click</code>
+					</dt>
+					<dd class="col-sm-8">
+						<p>
+							The <code>click</code> Event Listener triggers a Callback Function when the specified jQuery object (usually a HMTL element) registers a mouse click.
+						</p>
+						<code class="code-snippet">
+							$('.element_class').on('click', () => { $('.element_class').callbackFunction(); });
+						</code>
+						<p>
+							In the above example, the Event Listener will trigger the callbackFucntion() method on the HMTL class <code>element_class</code> whenever the HMTL class is clicked.
+						</p>
+						<div class="interactive-example">
+							<button class="click-example-button">Click</button>
+							<img class="click-example-image" src="img/Professor-chaos.png">
+							<img class="click-example-image" src="img/ButtersStotch.png" style="display: none;">
+						</div>
+					</dd>
+					<dt class="col-sm-4">
+						Event Listener - <code>mouseenter</code> and <code>mouseleave</code>
+					</dt>
+					<dd class="col-sm-8">
+						<p>
+							The <code>mouseenter</code> and <code>mouseleave</code> Event Listeners trigger a Callback Function when a mouse cursor enters or leaves a specified jQuery object.
+						</p>
+						<div class="interactive-example">
+							<p>This is a mouseenter/mouseleave example</p>
+							<p class="mouse-enter-leave-example">Hover here.</p>
+							<p class="mouse-enter-leave-example-target" style="display: none;">Oooooh, magic!</p>
+						</div>
+					</dd>
+					<dt class="col-sm-4">
+						<p>Generic Callback Functions - <code>show()</code>, <code>hide()</code> and <code>toggle()</code></p>
+					</dt>
+					<dd class="col-sm-8">
+						<p>
+							The first two do exactly what they say on the tin. <code>show()</code> removes the "<code>display: none</code>" from the style property of the HTML element (if there is one). <code>hide()</code> does the exact opposite. <code>toggle()</code> function switches the HMTL elemnt between the two different states.
+						</p>
+						<div class="interactive-example">
+							<button class="show-example-button">show()</button>
+							<button class="hide-example-button">hide()</button>
+							<button class="toggle-example-button">toggle()</button>
+							<img class="show-hide-toggle-example-image" src="img/Professor-chaos.png" style="display: none;">
+						</div>
+					</dd>
+					<dt class="col-sm-4">
+						<p>Generic Callback Functions - <code>fadeIn()</code>, <code>fadeOut()</code> and <code>fadeToggle()</code></p>
+					</dt>
+					<dd class="col-sm-8">
+						<p>
+							They all mirror the <code>show()</code>, <code>hide()</code> and <code>toggle()</code> functions in functionality but apply a <strong>fade</strong> transition, the time duration of which can be set (in milliseconds) as the parameter passed to the function (<code>fadeIn(100)</code>).
+						</p>
+						<div class="interactive-example">
+							<button class="fadein-example-button">fadeIn()</button>
+							<button class="fadeout-example-button">fadeOut()</button>
+							<button class="fadetoggle-example-button">fadeToggle()</button>
+							<img class="fadein-fadeout-fadetoggle-example-image" src="img/Professor-chaos.png" style="display: none;">
+						</div>
+					</dd>
+					<dt class="col-sm-4">
+						<p>Generic Callback Functions - <code>slideDown()</code>, <code>slideUp()</code> and <code>slideToggle()</code></p>
+					</dt>
+					<dd class="col-sm-8">
+						<p>
+							They all mirror the <code>show()</code>, <code>hide()</code> and <code>toggle()</code> functions in functionality but apply a <strong>slide</strong> transition, the time duration of which can be set (in milliseconds) as the parameter passed to the function (<code>slideUp(100)</code>).
+						</p>
+						<div class="interactive-example">
+							<button class="slidedown-example-button">slideDown()</button>
+							<button class="slideup-example-button">slideUp()</button>
+							<button class="slidetoggle-example-button">slideToggle()</button>
+							<img class="slideup-slidedown-slidetoggle-example-image" src="img/Professor-chaos.png" style="display: none;">
+						</div>
+					</dd>
+					<dt class="col-sm-4">
+						<p>Generic Callback Functions - <code>css()</code></p>
+					</dt>
+					<dd class="col-sm-8">
+						<p class="css-example-target">
+							Add the css properties passed (as an object) as a parameter in the function to the specified element the Callback Function is attached to.
+						</p>
+						<div class="interactive-example">
+							<button class="css-example-button1">css({color:'#535353'})</button>
+							<button class="css-example-button2">css({color:'#4286f4'})</button>
+							<button class="css-example-button3">css({color:'#47f441'})</button>
+							<button class="css-example-button4">Reset</button>
+						</div>
+					</dd>
+					<dt class="col-sm-4">
+						<p>Generic Callback Functions - <code>animate()</code></p>
+					</dt>
+					<dd class="col-sm-8">
+						<p class="animate-example-target">
+							Apply the <code>css()</code> Callback Function over a specified period of time. <strong>Note:</strong> <code>animate()</code> only works on specific css properties and will not throw an error if you try to apply one that does not play ball.
+						</p>
+						<div class="interactive-example">
+							<button class="animate-example-button1">animate({fontSize:'12px'},500)</button>
+							<button class="animate-example-button2">animate({fontSize:'24px'},750)</button>
+							<button class="animate-example-button3">animate({fontSize:'36px'},1000)</button>
+							<button class="animate-example-button4">Reset</button>
+						</div>
+					</dd>
+					<dt class="col-sm-4">
+						<p>Generic Callback Functions - <code>addClass()</code>, <code>removeClass()</code> and toggleClass()</p>
+					</dt>
+					<dd class="col-sm-8">
+						<p>
+							Add or remove a class from the specified element. <code>toggleClass()</code> behaves in the same manner as previous toggles.
+						</p>
+						<div class="interactive-example">
+							<button class="addclass-example-button">addClass()</button>
+							<button class="removeclass-example-button">removeClass()</button>
+							<button class="toggleclass-example-button">toggleClass()</button>
+							<img class="addclass-removeclass-toggleclass-example-image" src="img/Professor-chaos.png">
+						</div>
+					</dd>
+					<dt class="col-sm-4">
+						<p>Chaining Events</p>
+					</dt>
+					<dd class="col-sm-8">
+						<p>
+							It is possible to chain Events so you do not need to respecify the target Element each time.
+						</p>
+						<code class="code-snippet">
+							$itemClass.on('click', () => {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;$itemClass.clickCallbackFunction();<br>
+							}).on('mouseenter', () => {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;$itemClass.mouseEnterCallbackFunction();<br>
+							}).on('mouseleave', () => {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;$itemClass.mouseLeaveCallbackFunction();<br>
+							})
+						</code>
+						<p>
+							In the above example,
+						</p>
+					</dd>
+					<dt class="col-sm-4">
+						<p><code>event.currentTarget</code></p>
+					</dt>
+					<dd class="col-sm-8">
+						<p>Where multiple elements all have the same Class, it is possible to target the specific element for which the Event Listener is triggered on.</p>
+						<code class="code-snippet">
+							$($itemClass).on('mouseenter', event => {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;$(event.currentTarget).addClass('photo-active');<br>
+							}).on('mouseleave', event => {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;$(event.currentTarget).removeClass('photo-active');<br>
+							})
+						</code>
+						<p>In the above example, note that instead of the generic 'un-named' function '<code>()</code>', the special keyword <code>event</code> is used in its place. This property will typically be equal to the <code>this</code> of the function. Then, when subsequently referencing the target element for the generic Callback Function to interact with, <code>$(event.currentTarget)</code> is used.</p>
+						<div class="interactive-example">
+							<p class="currenttarget-example-target">These</p>
+							<p class="currenttarget-example-target">Words</p>
+							<p class="currenttarget-example-target">All</p>
+							<p class="currenttarget-example-target">Have</p>
+							<p class="currenttarget-example-target">The</p>
+							<p class="currenttarget-example-target">Same</p>
+							<p class="currenttarget-example-target">Class</p>
+						</div>
+					</dd>
+					<dt class="col-sm-4">
+						<p><code>.children()</code></p>
+					</dt>
+					<dd class="col-sm-8">
+						<p>You can target all the HTML elements inside an outer element. That is to say, you can target the child elements of a parent HTML element.</p>
+						<code class="code-snippet">const $kids = $('.class').children();</code>
+						<p>The above creates a variable <code>$kids</code> of all children of the element with a class of "class".</p>
+						<div class="interactive-example">
+							<div class="targetchildren-example-parent">
+								This is the parent element
+								<div class="targetchildren-example-child">
+									<p>This is a child element.</p>
+								</div>
+								<div class="targetchildren-example-child">
+									<p>This is also a child.</p>
+								</div>
+							</div>
+						</div>
+					</dd>
+					<dt class="col-sm-4">
+						<p><code>.parent()</code></p>
+					</dt>
+					<dd class="col-sm-8">
+						<p>You can target the parent element of a given child element, much like using <code>.children()</code>.</p>
+						<code class="code-snippet">const $parent = $('.class').parent()</code>
+						<p>The above code creates a variable <code>$parents</code> which targets the parent element of a HMTL element with the specified class.</p>
+						<div class="interactive-example">
+							<div class="targetparent-example-parent">
+								This is the parent element
+								<div class="targetparent-example-child">
+									<p>This is a child element.</p>
+								</div>
+								<div class="targetparent-example-child">
+									<p>This is also a child.</p>
+								</div>
+							</div>	
+						</div>
+					</dd>
+					<dt class="col-sm-4">
+						<p><code>.siblings()</code></p>
+					</dt>
+					<dd class="col-sm-8">
+						<p>By combining the <code>event.currentTarget()</code> and <code>.siblings()</code> it is possible to target adjacent HMTL elements.</p>
+						<code class="code-snippet">
+							$('.choice').on('click', event => {<br>
+  							&nbsp;&nbsp;&nbsp;&nbsp;$(event.currentTarget).siblings().removeClass('selected');<br>
+							});
+						</code>
+						<p>In the above code, the <code>.siblings()</code> method targets elements adjacent to the clicked <code>'.choice'</code> and removes the class <code>'selected'</code>.</p>
+						<div class="interactive-example">
+							<ul>
+								<li = class="targetsiblings-example">Item 1</li>
+								<li = class="targetsiblings-example">Item 2</li>
+								<li = class="targetsiblings-example">Item 3</li>
+								<li = class="targetsiblings-example">Item 4</li>
+								<li = class="targetsiblings-example">Item 5</li>
+								<li = class="targetsiblings-example">Item 6</li>
+								<li = class="targetsiblings-example">Item 7</li>
+							</ul>
+						</div>
+					</dd>
+					<dt class="col-sm-4">
+						<p><code>.closest()</code></p>
+					</dt>
+					<dd class="col-sm-8">
+						<p></p>
+						<code class="code-snippet">
+
+						</code>
+						<p></p>
+						<div class="interactive-example">
+						</div>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	
+		<script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	    <script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
