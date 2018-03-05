@@ -199,7 +199,7 @@
 						</div>
 					</dd>
 					<dt class="col-sm-4">
-						<p>Generic Callback Functions - <code>addClass()</code>, <code>removeClass()</code> and toggleClass()</p>
+						<p>Generic Callback Functions - <code>addClass()</code>, <code>removeClass()</code> and <code>toggleClass()</code></p>
 					</dt>
 					<dd class="col-sm-8">
 						<p>
@@ -306,13 +306,14 @@
 						<p>In the above code, the <code>.siblings()</code> method targets elements adjacent to the clicked <code>'.choice'</code> and removes the class <code>'selected'</code>.</p>
 						<div class="interactive-example">
 							<ul>
-								<li = class="targetsiblings-example">Item 1</li>
-								<li = class="targetsiblings-example">Item 2</li>
-								<li = class="targetsiblings-example">Item 3</li>
-								<li = class="targetsiblings-example">Item 4</li>
-								<li = class="targetsiblings-example">Item 5</li>
-								<li = class="targetsiblings-example">Item 6</li>
-								<li = class="targetsiblings-example">Item 7</li>
+								<li class="targetsiblings-example">Item 1</li>
+								<li class="targetsiblings-example">Item 2</li>
+								<li class="targetsiblings-example">Item 3</li>
+								<li class="targetsiblings-example">Item 4</li>
+								<li class="targetsiblings-example">Item 5</li>
+								<li class="targetsiblings-example">Item 6</li>
+								<li class="targetsiblings-example">Item 7</li>
+								<button class="targetsiblings-reset">Reset</button>
 							</ul>
 						</div>
 					</dd>
@@ -326,7 +327,38 @@
 						</code>
 						<p>In the above example, the <code>.closest()</code></p> method is called on <code>'.example-class'</code> elements. The method then targets the element selected by the <code>.closest()</code> method with a class of <code>'.another-class'</code>.
 						<div class="interactive-example">
+							<div class="closest-example">
+								<p class="closest-example-1">1</p>
+							</div>
+							<div class="closest-example">
+								<p class="closest-example-2">2</p>
+							</div>
+							<div class="closest-example">
+								<p class="closest-example-3">3</p>
+							</div>
 						</div>
+					</dd>
+					<dt class="col-sm-4">
+						<p><code>.next()</code> and <code>.previous()</code></p>
+					</dt>
+					<dd class="col-sm-8">
+						<p>The methods <code>.next()</code> and <code>.previous()</code> target adjacent elements (within the same hierarchy) which are either before or after a specified element.</p>
+						<div class="interactive-example">
+							<div class="next-example">MENU</div>
+							<ol style="display: none">
+								<li>Appetizers</li>
+								<li>Entrees</li>
+								<li>Salads</li>
+								<li>Sides</li>
+								<li>Desserts</li>
+							</ol>
+						</div>
+					</dd>
+					<dt class="col-sm-4">
+						<p><code>.find()</code></p>
+					</dt>
+					<dd class="col-sm-8">
+						<p>Much like the <code>.childern()</code> method, <code>.find()</code> targets singular or multiple elements that are descendants of an element. Unlike <code>.children()</code>, it traverses all descendants of the specified element, not just the first level down.</p>
 					</dd>
 				</dl>
 			</div>

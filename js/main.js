@@ -185,5 +185,30 @@ $(document).ready( () => {
 		$(event.currentTarget).siblings().removeClass('active');
 		$(event.currentTarget).addClass('active');
 	});
+	$('.targetsiblings-reset').on('click', () => {
+		$targetsiblingsExample.removeClass('active');
+	})
+
+	//closest
+	$('.closest-example-1').on('mouseenter', event => {
+		$(event.currentTarget).closest('.closest-example').addClass('active');
+	}).on('mouseleave', event => {
+		$(event.currentTarget).closest('.closest-example').removeClass('active');
+	})
+	$('.closest-example-2').on('mouseenter', event => {
+		$(event.currentTarget).closest('.closest-example').addClass('active');
+	}).on('mouseleave', event => {
+		$(event.currentTarget).closest('.closest-example').removeClass('active');
+	})
+	$('.closest-example-3').on('mouseenter', event => {
+		$(event.currentTarget).closest('.closest-example').addClass('active');
+	}).on('mouseleave', event => {
+		$(event.currentTarget).closest('.closest-example').removeClass('active');
+	})
+
+	//next
+	$('.next-example').on('click', event => {
+		$(event.currentTarget).next().toggle();
+	})
 
 });
