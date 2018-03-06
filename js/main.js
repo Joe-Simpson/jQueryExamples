@@ -211,4 +211,23 @@ $(document).ready( () => {
 		$(event.currentTarget).next().toggle();
 	})
 
+
+
+
+	//HMTL click-counter
+	var $counter = 0;
+	$('.html-click-count').on('click', () => {
+		var $stringStart = "<p>Click count: ";
+		var $stringEnd = "</p>";
+		$counter++;
+		var $stringFull = $stringStart + $counter + $stringEnd;
+		$('.click-count').html($stringFull);
+	})
+
+	$('.html-click-count-reset').on('click', () => {
+		$counter = 0;
+		var $stringFull = "<p>Click Counter</p>";
+		$('.click-count').html($stringFull);
+	})
+
 });
