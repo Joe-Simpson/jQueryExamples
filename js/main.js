@@ -236,7 +236,7 @@ $(document).ready( () => {
 	//ToDoListExample
 	var todo = [];
 	const $todoSubmit = $('.todo-submit');
-
+	//ToDoListSubmit
 	$todoSubmit.on('click', () => {
 		var todoHtml = "";
 		if ($('.todo-input').val().length > 0) {
@@ -252,12 +252,12 @@ $(document).ready( () => {
 			$('.todo-input').val("");
 		}
 	})
+	//ToDoListClear
 	$('.todo-clear').on('click', () => {
 		todo = [];
 		$('.todoApp-list').html("");
 		$('.todoApp-list').hide();
 		$('.todo-input').val("");
-
 	})
 
 });
