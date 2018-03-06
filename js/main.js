@@ -233,7 +233,7 @@ $(document).ready( () => {
 
 
 
-	//ToDoApp
+	//ToDoListExample
 	var todo = [];
 	const $todoSubmit = $('.todo-submit');
 
