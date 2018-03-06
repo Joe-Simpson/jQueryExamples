@@ -223,11 +223,41 @@ $(document).ready( () => {
 		var $stringFull = $stringStart + $counter + $stringEnd;
 		$('.click-count').html($stringFull);
 	})
-
+	//HTML click-counter-reset
 	$('.html-click-count-reset').on('click', () => {
 		$counter = 0;
 		var $stringFull = "<p>Click Counter</p>";
 		$('.click-count').html($stringFull);
+	})
+
+
+
+
+	//ToDoApp
+	var todo = [];
+	const $todoSubmit = $('.todo-submit');
+
+	$todoSubmit.on('click', () => {
+		var todoHtml = "";
+		if ($('.todo-input').val().length > 0) {
+			var todoInput = $('.todo-input').val();
+			console.log(todoInput);
+			todo[todo.length] = todoInput;
+			console.log(todo);
+			for (var i = 0; i < todo.length; i++) {
+				todoHtml = todoHtml + " <li>" + todo[i] + "</li>";
+			}
+			$('.todoApp-list').html(todoHtml);
+			$('.todoApp-list').show();
+			$('.todo-input').val("");
+		}
+	})
+	$('.todo-clear').on('click', () => {
+		todo = [];
+		$('.todoApp-list').html("");
+		$('.todoApp-list').hide();
+		$('.todo-input').val("");
+
 	})
 
 });

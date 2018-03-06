@@ -372,15 +372,51 @@
 
 						</div>
 					</dd>
+					<dt class="col-sm-4">
+						<p><code>.html()</code></p>
+					</dt>
+					<dd class="col-sm-8">
+						<p>
+							The <code>.html()</code> method serves two purposes.
+						</p>
+						<code class="code-snippet">var $html = $('.class').html()</code>
+						<p>
+							The code example above will take the HTML from within the top most html element identified by the jQuery object <code>$('.class')</code>.
+						</p>
+						<code class="code-snippet">$('.class').html("&lt;p&gt;Text&lt;&#47;p&gt;")</code>
+						<p>
+							The code example above will replace all the hmtl within the top most html element identified by a class of <code>.class</code> with <code>"&lt;p&gt;Text&lt;&#47;p&gt;"</code>.
+						</p>
+						<div class="interactive-example">
+							<div class="container click-count">
+								<p>Click Counter</p>
+							</div>
+							<div class="container">
+								<button class="html-click-count">Click</button>
+								<button class="html-click-count-reset">Reset</button>
+							</div>
+						</div>
+					</dd>
+					<dt class="col-sm-4">
+						<p>ToDo List</p>
+					</dt>
+					<dd class="col-sm-8">
+						<p>Below is an example that combines many of the principles above to create a simple non-persistent list maker.</p>
+						<div class="interactive-example">
+							<div class="container todoApp">
+								<input type="text" class="todo-input" name="todo-input" placeholder="ToDo">
+								<button class="todo-submit">Submit</button>
+								<button class="todo-clear">Clear List</button>
+								<ul class="todoApp-list" style="display: none"></ul>
+							</div>
+						</div>
+					</dd>
 				</dl>
 			</div>
-			<div class="container click-count">
-				<p>Click Counter</p>
-			</div>
-			<div class="container">
-				<button class="html-click-count">Click</button>
-				<button class="html-click-count-reset">Reset</button>
-			</div>
+			<br>
+			<br>
+			<br>
+			<br>
 		</div>
 	
 		<script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
