@@ -236,28 +236,29 @@ $(document).ready( () => {
 	//ToDoListExample
 	var todo = [];
 	const $todoSubmit = $('.todo-submit');
+	const $todoInput = $('.todo-input');
+	const $todoAppList = $('.todoApp-list');
 	//ToDoListSubmit
 	$todoSubmit.on('click', () => {
 		var todoHtml = "";
-		if ($('.todo-input').val().length > 0) {
-			var todoInput = $('.todo-input').val();
-			console.log(todoInput);
+		if ($todoInput.val().length > 0) {
+			var todoInput = $todoInput.val();
 			todo[todo.length] = todoInput;
 			console.log(todo);
 			for (var i = 0; i < todo.length; i++) {
 				todoHtml = todoHtml + " <li>" + todo[i] + "</li>";
 			}
-			$('.todoApp-list').html(todoHtml);
-			$('.todoApp-list').show();
-			$('.todo-input').val("");
+			$todoAppList.html(todoHtml);
+			$todoAppList.show();
+			$todoInput.val("");
 		}
 	})
 	//ToDoListClear
 	$('.todo-clear').on('click', () => {
 		todo = [];
-		$('.todoApp-list').html("");
-		$('.todoApp-list').hide();
-		$('.todo-input').val("");
+		$todoAppList.html("");
+		$todoAppList.hide();
+		$todoInput.val("");
 	})
 
 });
